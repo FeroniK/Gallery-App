@@ -18,6 +18,9 @@ export const getGallery = () => async dispatch => {
 
 export const postGallery = b64Data => async dispatch => {
     try {
+
+        dispatch({ type: 'UPLOADING'});
+
         const { data } = await api.postGallery({ image: b64Data });
         
         console.log(data);

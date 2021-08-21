@@ -7,7 +7,7 @@ import { CircularProgress } from '@material-ui/core';
 export default function UploadForm() {
     
     const [error, setError] = useState(null);
-    const isLoading = useSelector(state => state.gallery.loading);
+    const isLoading = useSelector(state => state.gallery.postingToGallery);
 
 
     const dispatch = useDispatch();

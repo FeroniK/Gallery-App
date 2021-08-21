@@ -1,7 +1,6 @@
 import axios from 'axios';
 
-const url = 'http://localhost:8800/api/gallery';
 
-export const fetchGallery = () => axios.get(url);
+export const fetchGallery = () => axios.get(`${process.env.REACT_APP_API_URL}/gallery`);
 
-export const postGallery = data => axios.post(url, data)
+export const postGallery = data => axios.post(`${process.env.REACT_APP_API_URL}/gallery`, data)

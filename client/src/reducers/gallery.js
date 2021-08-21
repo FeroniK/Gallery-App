@@ -2,7 +2,8 @@
 
 const initalState = {
     images: [],
-    loading: true
+    fetchingGallery: true,
+    postingToGallery: false
 }
 
 const reducer = (state = initalState, action) => {
@@ -15,15 +16,23 @@ const reducer = (state = initalState, action) => {
             return {
                 ...state,
                 images: payload,
-                loading: false
+                fetchingGallery: false
             };
 
         case 'POST_ONE':
             return {
                 ...state,
                 images: [payload, ...state.images],
-                loading: false
+                postingToGallery: false
             };
+        
+        
+        case 'UPLOADING':
+            
+            return {
+                ...state,
+                postingToGallery: true
+            }
 
 
         default: 
